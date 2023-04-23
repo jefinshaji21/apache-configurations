@@ -1,0 +1,23 @@
+<VirtualHost *:80>
+	
+	ServerName server_name
+	ServerAlias www.server_name
+    ServerAdmin webmaster@localhost
+	
+	DocumentRoot /sites/application
+	
+    <Directory />
+		AllowOverride All
+	</Directory>
+	
+    <Directory /sites/application>
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride all
+		Require all granted
+	</Directory>
+	
+    ErrorLog /var/log/apache2/server_name_error.log
+	LogLevel error
+	CustomLog /var/log/apache2/server_name_access.log combined
+
+</VirtualHost>
